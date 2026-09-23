@@ -24,6 +24,12 @@ The API uses a 40-connection MySQL pool, a bounded request queue, indexed attend
 
 The API runs at `http://localhost:5000`.
 
+## Deploy the full app on Render
+
+The repository includes `render.yaml`. In Render, choose **New > Blueprint** and select this GitHub repository. Set the external MySQL values when prompted: `DB_HOST`, `DB_USER`, and `DB_PASSWORD`. Run `schema.sql` against that MySQL database before using the API. Render will provide the public URL and `/api/health` will be used as the health check.
+
+Opening the Render service URL serves both the frontend and backend together, so relative API calls work without extra frontend configuration. GitHub Pages remains a static frontend preview only.
+
 For an Android emulator, use `http://10.0.2.2:5000` instead of `localhost`. For a physical device, use the computer's local network IP.
 
 ## API outline

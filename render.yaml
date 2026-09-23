@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: employee-attendance-api
+    runtime: node
+    rootDir: backend
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        generateValue: true
+      - key: DB_HOST
+        sync: false
+      - key: DB_USER
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      - key: DB_NAME
+        value: employee_attendance
+      - key: DB_POOL_SIZE
+        value: "40"
+      - key: DB_QUEUE_LIMIT
+        value: "1000"
+      - key: WORK_START
+        value: "09:00:00"
