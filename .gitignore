@@ -1,0 +1,15 @@
+# Node.js
+backend/node_modules/
+backend/.env
+
+# Local MySQL data
+backend/data/mysql/
+
+# Android/Gradle generated files
+android/.gradle/
+android/build/
+android/app/build/
+*.iml
+.idea/
+local.properties
+.DS_Store
